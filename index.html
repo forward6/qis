@@ -3,250 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Improbability Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Quantum Improbability Solutions - Official Site</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Custom styles for a more "Severance" feel */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5f5f7; /* Apple-like background */
-            color: #1d1d1f; /* Dark text */
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .section-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #1d1d1f;
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 2.5rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1d1d1f;
-        }
-        .card-description {
-            font-size: 1rem;
-            color: #6e6e73;
+            background-color: #0f0f0f; /* Very dark background */
+            color: #e0e0e0; /* Light gray text */
             line-height: 1.6;
         }
-        .footer-link {
-            color: #6e6e73;
-            transition: color 0.3s ease-in-out;
-        }
-        .footer-link:hover {
-            color: #007aff; /* Apple blue */
+
+        .container {
+            max-width: 1200px;
         }
 
-        /* Hero Section with Blurred Lab Background */
-        .hero-lab-bg {
-            background-image: url('/images/lab.png'); /* Placeholder for a generic lab image */
-            background-size: cover;
-            background-position: center;
+        /* Specific styling for sections to enhance the sterile, structured feel */
+        section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle dividers */
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            font-family: 'IBM Plex Mono', monospace; /* Monospaced for headings */
+            color: #ffffff; /* Pure white for headings */
+            letter-spacing: 0.05em; /* Slight letter spacing */
+        }
+
+        .nav-item {
             position: relative;
-            overflow: hidden; /* Ensures pseudo-element doesn't spill */
+            padding-bottom: 0.25rem;
+            transition: color 0.3s ease;
         }
 
-        .hero-lab-bg::before {
+        .nav-item::after {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
-            backdrop-filter: blur(8px); /* Apply blur to the background image */
-            z-index: 1;
+            width: 0;
+            height: 1px;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
         }
 
-        .hero-lab-bg .container {
-            position: relative;
-            z-index: 2; /* Ensures content is above the overlay */
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .button-primary {
+            background-color: #1a1a1a;
+            border: 1px solid #4a4a4a;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .button-primary:hover {
+            background-color: #2a2a2a;
+            border-color: #7a7a7a;
+        }
+
+        /* Subtle grid lines for a structured look */
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background-color: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #4a4a4a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #6a6a6a;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="grid-bg">
+    <div class="min-h-screen flex flex-col items-center p-4">
+        <!-- Header -->
+        <header class="w-full max-w-7xl flex justify-between items-center py-6 px-4 border-b border-gray-800">
+            <div class="text-2xl font-bold text-white tracking-widest">QUANTUM IMPROPABILITY SOLUTIONS</div>
+            <nav>
+                <ul class="flex space-x-8 text-sm font-medium">
+                    <li><a href="#home" class="nav-item">HOME</a></li>
+                    <li><a href="#about" class="nav-item">ABOUT</a></li>
+                    <li><a href="#divisions" class="nav-item">DIVISIONS</a></li>
+                    <li><a href="#careers" class="nav-item">CAREERS</a></li>
+                    <li><a href="#contact" class="nav-item">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Header/Navigation -->
-    <header class="bg-white py-4 shadow-sm">
-        <nav class="container flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="/images/qis-min.png" alt="Quantum Improbability Solutions Logo" class="h-10 mr-3">
-                <span class="text-2xl font-bold text-gray-800">Quantum Improbability Solutions</span>
-            </div>
-            <ul class="flex space-x-8">
-                <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About Us</a></li>
-                <li><a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Our Work</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- Main Content Container -->
+        <main class="flex-grow w-full max-w-7xl px-4">
 
-    <!-- Hero Section -->
-    <section class="hero-lab-bg text-white py-20 text-center rounded-b-3xl">
-        <div class="container">
-            <h1 class="text-5xl font-bold mb-6 leading-tight">Navigating the Uncharted. Defining the Undefined.</h1>
-            <p class="text-xl mb-8 opacity-90">
-                At Quantum Improbability Solutions, we don't just think outside the box. We question the very existence of the box, its dimensionality, and whether it truly contains anything at all.
-            </p>
-            <a href="#projects" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">Explore Our Breakthroughs</a>
-        </div>
-    </section>
+            <!-- Hero Section -->
+            <section id="home" class="flex flex-col md:flex-row items-center justify-between py-16 md:py-24 text-center md:text-left">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                        A Refined Existence.
+                        <br>A Better You.
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-8 max-w-md mx-auto md:mx-0">
+                        At Quantum Improbability Solutions, we believe in the inherent potential within every individual. Through our innovative programs, we unlock new efficiencies and foster unparalleled focus.
+                    </p>
+                    <a href="#careers" class="button-primary inline-block text-lg font-semibold">
+                        EXPLORE OPPORTUNITIES
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <!-- Quantum Improbability Solutions Logo -->
+                    <img src="/images/qis-min.png" alt="Quantum Improbability Solutions Logo - Stylized Atom" class="w-64 h-64 md:w-80 md:h-80 object-contain p-4 bg-gray-900 border border-gray-700 rounded-sm" onerror="this.onerror=null;this.src='https://placehold.co/320x320/1a1a1a/e0e0e0?text=Logo+Placeholder';">
+                </div>
+            </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="container">
-            <h2 class="section-heading">About Our Unique Approach</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Quantum Improbability Solutions is a pioneering force at the intersection of theoretical physics, advanced logistics, and highly unconventional business practices. We specialize in transforming complex challenges into... well, something entirely new. Our methodologies often defy conventional understanding, leading to outcomes that are, by definition, improbable.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Our commitment to innovation is unwavering, even when the laws of physics seem to be wavering with us. We believe that true progress lies beyond the predictable, in the quantum realm of unexpected results.
-                    </p>
+            <!-- About Section -->
+            <section id="about" class="py-16 md:py-24 text-center">
+                <h2 class="text-4xl font-bold mb-8">Our Philosophy</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-gray-300">
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Precision</h3>
+                        <p class="text-sm">Every task, every thought, meticulously aligned with our core directives. We eliminate distractions, ensuring optimal output.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Harmony</h3>
+                        <p class="text-sm">Our integrated methodologies foster a seamless environment where individual contributions coalesce into collective triumph.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Legacy</h3>
+                        <p class="text-sm">For generations, Quantum Improbability Solutions has guided humanity towards its true purpose. We are the architects of a brighter tomorrow.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://placehold.co/600x400/e0e0e0/555555?text=Innovative+Solutions" alt="Abstract image representing innovation" class="rounded-xl shadow-lg">
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Our Work/Projects Section -->
-    <section id="projects" class="py-20">
-        <div class="container">
-            <h2 class="section-heading">Our Groundbreaking (and Occasionally Ground-Breaking) Projects</h2>
+            <!-- Divisions Section -->
+            <section id="divisions" class="py-16 md:py-24 text-center">
+                <h2 class="text-4xl font-bold mb-8">Our Core Divisions</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-300">
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Macrodata Refinement</h3>
+                        <p class="text-sm">The foundational pillar of our operations, ensuring data integrity and classification.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Optics & Design</h3>
+                        <p class="text-sm">Crafting the visual and conceptual frameworks that define our corporate identity.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Lexical Scrutiny</h3>
+                        <p class="text-sm">Analyzing and optimizing linguistic structures for maximum clarity and impact.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Perpetual Wellness</h3>
+                        <p class="text-sm">Dedicated to the holistic well-being and sustained productivity of our valued employees.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Testing & Evaluation</h3>
+                        <p class="text-sm">Rigorous assessment protocols to ensure the highest standards of operational excellence.</p>
+                    </div>
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-900/50">
+                        <h3 class="text-xl font-semibold mb-4 text-white">Security & Compliance</h3>
+                        <p class="text-sm">Upholding the integrity of our systems and the privacy of our proprietary methods.</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Careers Section -->
+            <section id="careers" class="py-16 md:py-24 text-center">
+                <h2 class="text-4xl font-bold mb-8">Join Our Team</h2>
+                <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Are you ready to commit to a purpose greater than yourself? Quantum Improbability Solutions offers a unique path to professional fulfillment and personal growth.
+                </p>
+                <a href="#contact" class="button-primary inline-block text-lg font-semibold">
+                    APPLY NOW
+                </a>
+            </section>
 
-                <!-- Space and Astronomical Projects -->
-                <div class="card">
-                    <h3 class="card-title">Cosmic Observation & Reality Verification Observatory</h3>
-                    <p class="card-description">
-                        Our $47 million observatory, a testament to unconventional perspectives, was meticulously constructed upside down. Its primary telescope proudly points into the Earth's core, offering unparalleled insights into... well, the Earth's core. We believe true cosmic understanding begins from within.
-                    </p>
+            <!-- Contact Section -->
+            <section id="contact" class="py-16 md:py-24 text-center border-b-0">
+                <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+                <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+                    For inquiries, please reach out through the designated channels. Our representatives are available during standard operational hours.
+                </p>
+                <div class="text-gray-300 text-sm">
+                    <p>E-mail: <a href="mailto:inquiries@quantumimprobability.com" class="text-white hover:underline">inquiries@quantumimprobability.com</a></p>
+                    <p>Phone: +1 (555) QIS-SOLV</p>
+                    <p>Address: 123 Kier Blvd, Severance, NY 10001</p>
                 </div>
-                <div class="card">
-                    <h3 class="card-title">Orbital Cloud Storage System</h3>
-                    <p class="card-description">
-                        We pioneered the world's first literal "cloud storage" by deploying 42,000 filing cabinets into low Earth orbit. While it created some interesting debris fields and satellite interference, the conceptual purity of the initiative remains unchallenged.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Heisenberg Document Storage</h3>
-                    <p class="card-description">
-                        Our attempt to patent "Heisenberg Document Storage" aimed to revolutionize data density, allowing infinite documents in a space smaller than a paperclip. The challenge? Knowing precisely what document you're looking for, and where it is, simultaneously.
-                    </p>
-                </div>
+            </section>
 
-                <!-- Sales and Marketing Innovations -->
-                <div class="card">
-                    <h3 class="card-title">Disrupting CERN's Monopoly</h3>
-                    <p class="card-description">
-                        Brad from Sales bravely attempted to "disrupt CERN's monopoly on reality itself" by reimagining the Standard Model of particle physics as a sales pipeline. Early projections for the "Quark-to-Client Conversion Rate" were highly optimistic.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Lagrange Logistics & Gravitational Asset Management</h3>
-                    <p class="card-description">
-                        We've redefined asset management by storing company property at gravitational equilibrium points. This includes suspending a Lamborghini and a quantum tennis court in geostationary orbit. Our "quantum client entertainment facilities" are truly out of this world.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">The Salesion Particle</h3>
-                    <p class="card-description">
-                        Building on fundamental physics, we've invented the "Salesion" particle. Much like the Higgs boson, it gives mass to other particles, but ours also provides a significant boost to quarterly projections. Its discovery has yet to be independently verified.
-                    </p>
-                </div>
+        </main>
 
-                <!-- Mathematical and Computing Disasters -->
-                <div class="card">
-                    <h3 class="card-title">The Zero Sum Problem</h3>
-                    <p class="card-description">
-                        For years, we operated without the mathematical concept of zero. When finally introduced, it caused unforeseen systemwide anomalies: HVAC units cooled rooms to absolute zero, catering budgets imploded, and elevators entered quantum superposition.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Employee Compensation Reimagined</h3>
-                    <p class="card-description">
-                        Our innovative payroll systems initially charged employees for the privilege of coming to work. While this significantly boosted our bottom line, it did present some challenges in talent retention. We've since recalibrated.
-                    </p>
-                </div>
+        <!-- Footer -->
+        <footer class="w-full max-w-7xl py-8 px-4 text-center text-gray-600 text-xs border-t border-gray-800 mt-auto">
+            <p>&copy; 2025 Quantum Improbability Solutions. All rights reserved. Your compliance is appreciated.</p>
+            <p class="mt-2">A Division of Perpetuity.</p>
+        </footer>
+    </div>
 
-                <!-- Physics and Engineering Mishaps -->
-                <div class="card">
-                    <h3 class="card-title">The Small Hadron Collider</h3>
-                    <p class="card-description">
-                        Our "Small Hadron Collider" was ingeniously powered by overworked coffee machines. During an optimization cycle, one coffee machine achieved quantum consciousness and accidentally discovered evidence for supersymmetry. We're still trying to replicate the bean-to-water ratio.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Momentum-Based Management System</h3>
-                    <p class="card-description">
-                        A consultant's "Momentum-Based Management System" promised unparalleled efficiency. Unfortunately, it was subtly affected by thermal air currents from a space heater, leading to company-wide momentum problems and unexpected shifts in strategic direction.
-                    </p>
-                </div>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-                <!-- Interdimensional Operations -->
-                <div class="card">
-                    <h3 class="card-title">Interdimensional Performance Reviews</h3>
-                    <p class="card-description">
-                        We diligently conduct performance reviews for unmanned space probes that had been isolated for 15+ years. Their feedback, though sparse, is invaluable for our "Quantum HR Violations: Confidential" filing cabinets.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">First Extraterrestrial Contact</h3>
-                    <p class="card-description">
-                        Our groundbreaking first extraterrestrial contact revealed aliens who had, regrettably, dialed the wrong galaxy. It was the cosmic equivalent of a misdirected text message, but we're confident the next call will be more intentional.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Contact Section -->
-    <section id="contact" class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white py-20 text-center rounded-t-3xl">
-        <div class="container">
-            <h2 class="text-4xl font-bold mb-6">Ready to Explore the Improbable?</h2>
-            <p class="text-xl mb-8 opacity-90">
-                Whether you're seeking solutions beyond the conventional or simply curious about the next frontier of corporate absurdity, our team is ready to engage.
-            </p>
-            <a href="mailto:info@quantumimprobability.com" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">Contact Our Interdimensional Relations Department</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white py-10 text-gray-600 text-sm">
-        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <div class="mb-4 md:mb-0">
-                <p>&copy; 2025 Quantum Improbability Solutions. All Rights Reserved. (Probably.)</p>
-                <p>Disclaimer: Any resemblance to actual companies, living or in quantum superposition, is purely coincidental.</p>
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Terms of Service</a>
-                <a href="#" class="footer-link">Investor Relations (Highly Unlikely)</a>
-            </div>
-        </div>
-    </footer>
-
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
